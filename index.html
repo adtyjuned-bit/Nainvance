@@ -7,14 +7,14 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- CSS AOS (Animate On Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  
-  
+
   <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- File CSS Eksternal -->
   <link rel="stylesheet" href="css/style.css">
@@ -22,140 +22,116 @@
 
 <body class="bg-[#0d0b18] text-white min-h-screen overflow-x-hidden font-rajdhani">
 
-      <!-- =========================================================================
-       MODUL 1: LOADING SCREEN (FIX BACKGROUND LANGSUNG KELIATAN)
+  <!-- =========================================================================
+       MODUL 1: LOADING SCREEN & GATE TRANSITION
        ========================================================================= -->
-  <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden select-none transition-opacity duration-700">
-
-    <!-- Layer 1: Background Utama (Paling Belakang / z-0) -->
+  <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0d0b18]">
+    <!-- Background Image Overlay -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-[#0d0b18]">
-      <img src="nainvance.png" alt="Character BG" class="w-full h-full object-cover object-center opacity-60 blur-[2px] scale-105">
-      <!-- Dark Overlay Tipis Supaya Teks Tetap Jelas -->
+      <img src="nainvance.png" alt="Character BG" class="w-full h-full object-cover opacity-20 filter blur-sm">
       <div class="absolute inset-0 bg-[#0d0b18]/50"></div>
     </div>
 
-    <!-- Layer 2: Pintu Transisi Gate (Diubah jadi semi-transparan / z-10) -->
-    <div class="gate-top absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#0d0b18]/90 via-[#0d0b18]/40 to-transparent border-b border-[#00f0ff]/40 z-10 transition-transform duration-700 ease-in-out"></div>
-    <div class="gate-bottom absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#0d0b18]/90 via-[#0d0b18]/40 to-transparent border-t border-[#00f0ff]/40 z-10 transition-transform duration-700 ease-in-out"></div>
+    <!-- Pintu Transisi Gate -->
+    <div class="gate-top absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#0d0b18] to-purple-950/80 border-b border-[#00f0ff]/30 transition-transform duration-700 ease-in-out z-10"></div>
+    <div class="gate-bottom absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#0d0b18] to-purple-950/80 border-t border-[#00f0ff]/30 transition-transform duration-700 ease-in-out z-10"></div>
 
-    <!-- Layer 3: Konten Loading Tengah (Paling Depan / z-20) -->
-    <div id="loading-content" class="relative z-20 flex flex-col items-center w-full max-w-sm px-6 text-center transition-all duration-500">
-
-      <!-- Badge Indikator Status -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-gray-200 text-[10px] font-bold font-orbitron tracking-widest mb-6 shadow-[0_0_15px_rgba(255,102,196,0.2)]">
+    <!-- Konten Loading Tengah -->
+    <div id="loading-content" class="relative z-20 flex flex-col items-center justify-center p-6 text-center space-y-4">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff66c4]/10 border border-[#ff66c4]/40 text-[#ff66c4] font-orbitron text-xs font-bold tracking-widest uppercase">
         <span class="w-2 h-2 rounded-full bg-[#ff66c4] animate-ping"></span>
-        配信待機中 • STREAM WAITING ROOM
-      </div>
-
-      <!-- Frame Avatar Karakter -->
-      <div class="relative w-32 h-32 mb-5 group">
-        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[#ff66c4] via-[#00f0ff] to-purple-600 blur opacity-80 animate-pulse"></div>
-        <div class="relative w-full h-full rounded-3xl p-1 bg-[#0d0b18] overflow-hidden border border-white/20">
-          <img src="nainvance.png" alt="Avatar" class="w-full h-full object-cover object-top rounded-2xl">
-        </div>
-      </div>
-
-      <!-- Judul / Branding Streamer -->
-      <h1 class="font-orbitron text-3xl md:text-4xl font-black tracking-wider text-white uppercase leading-none mb-1">
-        LIVE <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-[#ff66c4]">PORTAL</span>
-      </h1>
-      <p class="font-orbitron text-[11px] text-[#00f0ff] font-bold tracking-[0.4em] uppercase mb-6 drop-shadow">
-        エンターテインメント
-      </p>
-
+        SYSTEM INITIALIZING
+      </span>
+      <h2 class="font-orbitron text-xl sm:text-2xl font-extrabold tracking-wider text-white">SYSTEM LOADING...</h2>
+      
       <!-- Progress Bar -->
-      <div class="w-full space-y-2">
+      <div class="w-64 space-y-2">
         <div class="flex justify-between items-end font-orbitron text-xs">
-          <span id="status-text" class="text-gray-400 font-medium text-[10px] tracking-wider">SYSTEM LOADING... 読み込み中</span>
+          <span id="status-text" class="text-gray-400 font-medium text-[10px] tracking-wider">LOADING ASSETS</span>
           <span id="percentage-text" class="text-[#ff66c4] font-black text-sm italic">0%</span>
         </div>
-        <div class="w-full h-2 bg-black/60 p-[2px] rounded-full border border-white/10 overflow-hidden shadow-inner">
-          <div id="progress-bar" class="h-full bg-gradient-to-r from-[#00f0ff] via-purple-500 to-[#ff66c4] w-0 transition-all duration-75 ease-out rounded-full shadow-[0_0_10px_#00f0ff]"></div>
+        <div class="w-full h-2 bg-black/60 p-[2px] rounded-full border border-white/20">
+          <div id="progress-bar" class="h-full bg-gradient-to-r from-[#00f0ff] via-purple-500 to-[#ff66c4] rounded-full transition-all duration-100" style="width: 0%"></div>
         </div>
       </div>
-
     </div>
   </div>
 
 
-   <!-- =========================================================================
-       MODUL 2: MAIN CONTENT DASHBOARD (AVATAR HERO + LIVE STREAM TIKTOK)
-       Fungsi: Menampilkan Avatar Interaktif Utama & Card Live Stream TikTok
+  <!-- =========================================================================
+       MODUL 2: MAIN CONTENT DASHBOARD (VERSI PAS DI HP & INTERAKTIF)
        ========================================================================= -->
-  <main id="main-content" class="relative z-10 w-full max-w-4xl mx-auto px-4 py-8 md:py-12 space-y-12 font-rajdhani">
+  <main id="main-content" class="relative z-10 w-full max-w-2xl mx-auto px-4 py-6 space-y-8 font-rajdhani">
 
-    <!-- [STRUKTUR 2.1] HERO AVATAR SECTION (Tampilan Pertama Pas Masuk) -->
-    <section class="flex flex-col items-center justify-center text-center pt-4 sm:pt-8">
+    <!-- [STRUKTUR 2.1] HERO AVATAR SECTION -->
+    <section class="flex flex-col items-center justify-center text-center pt-2">
       
-      <!-- Container Avatar Interaktif (Hover Grow & Floating Animation) -->
+      <!-- Container Avatar Interaktif -->
       <div class="relative group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-
-        <!-- Glow Light Effect di Belakang Avatar -->
-        <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-[#00f0ff] via-purple-600 to-[#ff66c4] blur-xl opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-        
-        <!-- Gambar Avatar Utama -->
-        <div class="relative w-36 h-36 sm:w-48 sm:h-48 rounded-full border-4 border-[#00f0ff]/50 overflow-hidden shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-transform duration-500 group-hover:scale-105 floating-avatar">
+        <!-- Glow Light Effect -->
+        <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-[#00f0ff] via-purple-600 to-[#ff66c4] blur-md opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+        <!-- Gambar Avatar -->
+        <div class="relative w-36 h-36 sm:w-48 sm:h-48 rounded-full border-2 border-[#00f0ff]/50 overflow-hidden shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-transform duration-500 group-hover:scale-105">
           <img src="nainvance.png" alt="Avatar Utama" class="w-full h-full object-cover object-top">
         </div>
       </div>
 
-      <!-- Teks Welcome / Name Tag Interaktif -->
-      <div class="mt-6 space-y-2" data-aos="fade-up" data-aos-delay="200">
-        
-        <span class="px-4 py-1 rounded-full bg-white/5 border border-[#00f0ff]/30 text-[#00f0ff] font-orbitron text-xs font-bold tracking-widest uppercase">
+      <!-- Teks Welcome / Name Tag -->
+      <div class="mt-4 space-y-1" data-aos="fade-up" data-aos-delay="200">
+        <span class="px-3 py-0.5 rounded-full bg-white/5 border border-[#00f0ff]/30 text-[#00f0ff] font-orbitron text-[10px] font-bold tracking-widest uppercase">
           WELCOME TO MY PORTAL
         </span>
-        <h1 class="font-orbitron text-4xl sm:text-5xl font-black text-white tracking-wider">
+        <h1 class="font-orbitron text-2xl sm:text-4xl font-black text-white tracking-wider">
           NAISAN <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-[#ff66c4]">STREAM</span>
         </h1>
       </div>
 
-      <!-- Arrow Scroll Down Indicator -->
-      <div class="mt-8 animate-bounce text-gray-400">
-        <p class="text-[10px] font-orbitron tracking-widest mb-1 text-[#00f0ff]">SCROLL DOWN FOR LIVE</p>
-        <span class="text-xl">↓</span>
+      <!-- Scroll Down Indicator -->
+      <div class="mt-4 animate-bounce text-gray-400">
+        <p class="text-[9px] font-orbitron tracking-widest mb-0.5 text-[#00f0ff]">SCROLL DOWN FOR LIVE</p>
+        <span class="text-sm">↓</span>
       </div>
 
     </section>
 
 
-    <!-- [STRUKTUR 2.2] STREAMING BERLANGSUNG SECTION (Di-scroll ke Bawah) -->
-    <section class="space-y-4">
+    <!-- [STRUKTUR 2.2] STREAMING BERLANGSUNG SECTION -->
+    <section class="space-y-3">
       
       <!-- Card Banner Live Stream Interaktif -->
-      <<div class="relative w-full rounded-2xl bg-[#0d0b18]/90 border border-white/20 p-4 sm:p-6 overflow-hidden backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-[#ff66c4]/50 group" data-aos="fade-up" data-aos-delay="300">
-
+      <div class="relative w-full rounded-2xl bg-[#0d0b18]/90 border border-white/20 p-4 sm:p-6 overflow-hidden backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-[#ff66c4]/50 group" data-aos="fade-up" data-aos-delay="300">
+        
         <!-- Light Gradient Accent Background -->
-        <div class="absolute -top-24 -right-24 w-72 h-72 bg-[#ff66c4]/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-[#00f0ff]/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#ff66c4]/15 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-[#00f0ff]/15 rounded-full blur-2xl pointer-events-none"></div>
 
-        <!-- Header Card: Status Live Badge -->
-        <div class="flex items-center justify-between mb-6">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-600/20 border border-red-500/50 text-red-400 font-orbitron text-[9px] font-bold tracking-wider shadow-[0_0_15px_rgba(239,68,68,0.3)]">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+        <!-- Header Card: Status Live Badge & Platform Label -->
+        <div class="flex items-center justify-between mb-3 gap-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-600/20 border border-red-500/50 text-red-400 font-orbitron text-[9px] font-bold tracking-wider shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
             STREAMING BERLANGSUNG
           </div>
-          <span class="font-orbitron text-xs text-gray-400">TIKTOK LIVE</span>
+          <span class="font-orbitron text-[10px] text-gray-400 tracking-wider">TIKTOK LIVE</span>
         </div>
 
-        <!-- Video Player Frame / Thumbnail Live Stream -->
-        <div class="relative w-full h-40 sm:h-52 rounded-2xl overflow-hidden bg-black/80 border border-white/10 group-hover:border-[#00f0ff]/40 transition-all duration-300 mb-6">
-          <img src="nainvance.png" alt="Live Stream Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+        <!-- Video Player Frame / Live Stream Thumbnail -->
+        <div class="relative w-full h-40 sm:h-52 rounded-xl overflow-hidden bg-black/80 border border-white/10 group-hover:border-[#00f0ff]/40 transition-all duration-300 mb-4">
+          <img src="nainvance.png" alt="Live Stream Thumbnail" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700">
           
           <!-- Overlay Text & Play Icon -->
-          <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-center">
-            <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#ff66c4] to-[#00f0ff] text-black flex items-center justify-center font-bold text-2xl shadow-[0_0_25px_rgba(0,240,255,0.6)] mb-3 group-hover:scale-110 transition-transform">
+          <div class="absolute inset-0 flex flex-col items-center justify-center p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-center">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#ff66c4] to-[#00f0ff] text-black flex items-center justify-center font-bold text-sm shadow-[0_0_15px_rgba(0,240,255,0.5)] mb-2 group-hover:scale-110 transition-transform">
               ▶
             </div>
-            <h3 class="font-orbitron text-lg sm:text-2xl font-extrabold text-white">SESI STREAMING SEDANG LIVE!</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mt-1 max-w-md">Yuk gabung keseruan obrolan dan gameplay interaktif langsung di TikTok sekarang!</p>
+            <h3 class="font-orbitron text-sm sm:text-lg font-extrabold text-white">SESI STREAMING SEDANG LIVE!</h3>
+            <p class="text-[11px] text-gray-300 mt-0.5 max-w-xs leading-snug">Yuk gabung keseruan obrolan dan gameplay interaktif langsung di TikTok sekarang!</p>
           </div>
         </div>
 
-        <!-- Tombol Menonton Live Langsung ke TikTok -->
+        <!-- Tombol Menonton Live -->
         <div class="flex justify-center">
-          <a href="https://www.tiktok.com/@nainsan_/live" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-2.5 rounded-2xl bg-gradient-to-r from-[#ff66c4] via-purple-600 to-[#00f0ff] text-black font-orbitron font-black text-xs tracking-wider hover:opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(255,102,196,0.5)] flex items-center justify-center gap-3 group-hover:scale-105">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <a href="https://www.tiktok.com/@naaisan_live" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#ff66c4] via-purple-600 to-[#00f0ff] text-black font-orbitron font-black text-xs tracking-wider hover:opacity-90 transition-all duration-300 shadow-[0_0_15px_rgba(255,102,196,0.4)] flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 2.482 6.386 6.386 0 0 0 1.08 8.163 6.335 6.335 0 0 0 8.333-.308 6.36 6.36 0 0 0 1.884-4.518V8.812a8.188 8.188 0 0 0 4.788 1.523V6.889a4.843 4.843 0 0 1-1.456-.203z"/>
             </svg>
             <span>MENONTON LIVE DI TIKTOK</span>
@@ -167,19 +143,16 @@
     </section>
 
   </main>
-  
 
-  
-  <!-- File JS Eksternal -->
-  
-  <  <!-- JS AOS -->
+
+  <!-- =========================================================================
+       MODUL 3: SCRIPT LOADING & ANIMASI
+       ========================================================================= -->
+  <!-- JS AOS Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- JS Utama -->
   <script src="js/main.js" defer></script>
 </body>
-</html>
-
-</body>
-</html>
-
+                </html>
+                
