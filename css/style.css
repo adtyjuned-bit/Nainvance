@@ -17,3 +17,33 @@ body {
   font-family: 'Orbitron', sans-serif;
 }
 
+/* =========================================================================
+   NOTE CSS: ANIMASI FLOATING AVATAR INTERAKTIF
+   Fungsi: Membikin avatar bergerak naik-turun halus secara otomatis
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&family=Rajdhani:wght@600;700&display=swap');
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #0d0b18;
+  color: #ffffff;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Animasi Melayang Avatar */
+.floating-avatar {
+  animation: floatAvatar 4s ease-in-out infinite;
+}
+
+@keyframes floatAvatar {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
