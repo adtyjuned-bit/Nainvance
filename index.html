@@ -22,17 +22,29 @@
 
 <body class="bg-[#05050a] text-white min-h-screen flex flex-col items-center justify-between relative overflow-hidden font-rajdhani">
 
-     <!-- =========================================================================
-       2. MODUL: JAPANESE STREAMER WAITING ROOM LOADING SCREEN
+
+      <!-- =========================================================================
+       2. MODUL: JAPANESE STREAMER LOADING SCREEN (WITH CUSTOM CHARACTER & BG)
        =========================================================================
-       [PEMBATAS EDIT]: Tampilan Loading ala Room Wait Streamer Jepang / Anime Aesthetic
+       [PEMBATAS EDIT]: Tampilan Loading dengan Avatar & Background Karakter Kamu
   -->
   <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0d0b18] overflow-hidden select-none font-rajdhani">
     
-    <!-- Pattern Dots & Ambient Neon Glow -->
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
-    <div class="absolute w-[400px] h-[400px] bg-[#ff66c4]/10 rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
-    <div class="absolute w-[300px] h-[300px] bg-[#00f0ff]/10 rounded-full blur-[80px] pointer-events-none"></div>
+    <!-- =======================================================================
+         BACKGROUND KARAKTER (Bisa diatur Blur & Opacity-nya)
+         =======================================================================
+         [GANTI GAMBAR KARAKTER KAMU DI SINI]: Taruh URL / path file gambar karakter di 'src'
+    -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80" 
+           alt="Character Background" 
+           class="w-full h-full object-cover object-center opacity-20 blur-md scale-110">
+      <!-- Dark Overlay agar teks di atasnya tetap terbaca jelas -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0d0b18] via-[#0d0b18]/70 to-[#0d0b18]"></div>
+    </div>
+
+    <!-- Pattern Dots Overlay -->
+    <div class="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
 
     <!-- Pintu Transisi Atas (Slide Up) -->
     <div class="gate-top absolute top-0 left-0 w-full h-1/2 bg-[#0d0b18] border-b border-[#00f0ff]/20 z-0"></div>
@@ -44,27 +56,32 @@
     <div id="loading-content" class="relative z-10 flex flex-col items-center w-full max-w-sm px-6 text-center transition-opacity duration-500">
       
       <!-- Top Japanese Waiting Badge -->
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-bold font-orbitron tracking-widest mb-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-gray-200 text-[10px] font-bold font-orbitron tracking-widest mb-6 shadow-lg">
         <span class="w-2 h-2 rounded-full bg-[#ff66c4] animate-ping"></span>
         配信待機中 • STREAM WAITING ROOM
       </div>
 
-      <!-- Avatar / Mascot Chibi Ring -->
-      <!-- [EDIT DI SINI]: Ganti gambar avatar/maskot kamu di URL 'src' -->
-      <div class="relative w-28 h-28 mb-5 group">
+      <!-- =======================================================================
+           AVATAR / KARAKTER UTAMA DI TENGAH
+           =======================================================================
+           [GANTI GAMBAR KARAKTER KAMU DI SINI]: Taruh URL / path file gambar karakter di 'src'
+      -->
+      <div class="relative w-32 h-32 mb-5 group">
         <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[#ff66c4] via-[#00f0ff] to-purple-500 blur-sm opacity-80 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative w-full h-full rounded-3xl p-1 bg-[#0d0b18] overflow-hidden border border-white/20">
-          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=AnimeMascot" alt="Mascot Avatar" class="w-full h-full object-cover rounded-2xl bg-purple-950/40">
+        <div class="relative w-full h-full rounded-3xl p-1 bg-[#0d0b18] overflow-hidden border border-white/20 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" 
+               alt="My Character Avatar" 
+               class="w-full h-full object-cover object-top rounded-2xl">
         </div>
       </div>
 
       <!-- Channel / Branding Title -->
-      <!-- [EDIT DI SINI]: Nama Channel / Brand Utama Kamu -->
-      <h1 class="font-orbitron text-3xl md:text-4xl font-black tracking-wider text-white uppercase leading-none mb-1">
+      <!-- [EDIT DI SINI]: Ganti dengan Nama Channel Kamu -->
+      <h1 class="font-orbitron text-3xl md:text-4xl font-black tracking-wider text-white uppercase leading-none mb-1 drop-shadow-md">
         LIVE <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-[#ff66c4]">PORTAL</span>
       </h1>
 
-      <p class="font-orbitron text-[11px] text-[#00f0ff] font-bold tracking-[0.4em] uppercase mb-6">
+      <p class="font-orbitron text-[11px] text-[#00f0ff] font-bold tracking-[0.4em] uppercase mb-6 drop-shadow">
         エンターテインメント
       </p>
 
@@ -73,7 +90,7 @@
         
         <!-- Status Label & Percentage -->
         <div class="flex justify-between items-end font-orbitron text-xs">
-          <span id="status-text" class="text-gray-400 font-medium text-[10px] tracking-wider">
+          <span id="status-text" class="text-gray-300 font-medium text-[10px] tracking-wider">
             SYSTEM LOADING... 読み込み中
           </span>
           <span id="percentage-text" class="text-[#ff66c4] font-black text-sm italic">
@@ -82,19 +99,20 @@
         </div>
 
         <!-- Progress Track -->
-        <div class="w-full h-2 bg-black/60 p-[2px] rounded-full border border-white/10 overflow-hidden shadow-inner">
+        <div class="w-full h-2 bg-black/60 p-[2px] rounded-full border border-white/10 overflow-hidden shadow-inner backdrop-blur-sm">
           <div id="progress-bar" class="h-full bg-gradient-to-r from-[#00f0ff] via-purple-500 to-[#ff66c4] w-0 transition-all duration-75 ease-out rounded-full shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
         </div>
 
       </div>
 
       <!-- Bottom Aesthetic Note -->
-      <div class="mt-8 flex items-center gap-2 text-[10px] font-orbitron text-gray-500 tracking-widest uppercase">
+      <div class="mt-8 flex items-center gap-2 text-[10px] font-orbitron text-gray-400 tracking-widest uppercase">
         <span>[ ONLINE COMMUNITY HUB ]</span>
       </div>
 
     </div>
   </div>
+  
   
 
     <!-- =========================================================================
