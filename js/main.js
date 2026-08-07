@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
           
           setTimeout(() => {
             if (loadingScreen) loadingScreen.style.display = 'none';
-            
-            // Pemicu animasi scroll saat pintu kebuka
             initScrollAnimation();
           }, 700);
         }, 500);
