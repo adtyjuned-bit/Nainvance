@@ -88,7 +88,8 @@
     <section class="flex flex-col items-center justify-center text-center pt-4 sm:pt-8">
       
       <!-- Container Avatar Interaktif (Hover Grow & Floating Animation) -->
-      <div class="relative group cursor-pointer">
+      <div class="relative group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+
         <!-- Glow Light Effect di Belakang Avatar -->
         <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-[#00f0ff] via-purple-600 to-[#ff66c4] blur-xl opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
         
@@ -99,7 +100,8 @@
       </div>
 
       <!-- Teks Welcome / Name Tag Interaktif -->
-      <div class="mt-6 space-y-2">
+      <div class="mt-6 space-y-2" data-aos="fade-up" data-aos-delay="200">
+        
         <span class="px-4 py-1 rounded-full bg-white/5 border border-[#00f0ff]/30 text-[#00f0ff] font-orbitron text-xs font-bold tracking-widest uppercase">
           WELCOME TO MY PORTAL
         </span>
@@ -121,7 +123,7 @@
     <section class="space-y-4">
       
       <!-- Card Banner Live Stream Interaktif -->
-      <div class="relative w-full rounded-3xl bg-[#0d0b18]/90 border border-white/20 p-6 sm:p-8 overflow-hidden backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-[#ff66c4]/50 group">
+      <div class="relative w-full rounded-3xl bg-[#0d0b18]/90 border border-white/20 p-6 sm:p-8 overflow-hidden backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-[#ff66c4]/50 group"data-aos="fade-up" data-aos-delay="300">
         
         <!-- Light Gradient Accent Background -->
         <div class="absolute -top-24 -right-24 w-72 h-72 bg-[#ff66c4]/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -169,6 +171,17 @@
 
   
   <!-- File JS Eksternal -->
+  
+  <!-- JS AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Kecepatan animasi (800ms)
+    once: false,   // Set 'false' agar efek animasi muncul terus tiap kali di-scroll naik/turun
+    offset: 100    // Jarak scroll sebelum animasi aktif
+  });
+</script>
+  
   <script src="js/main.js" defer></script>
 </body>
 </html>
