@@ -1,49 +1,42 @@
-/* =========================================================================
-   NOTE CSS: IMPORT FONT & STYLING GLOBAL
-   Fungsi: Mengatur font bawaan dan class khusus font-orbitron
-   ========================================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&family=Rajdhani:wght@600;700&display=swap');
-
-/* Font Bawaan Seluruh Halaman Web */
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background-color: #0d0b18;
-  color: #ffffff;
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Custom Class Font Futuristic Cyberpunk */
-.font-orbitron {
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* =========================================================================
-   NOTE CSS: ANIMASI FLOATING AVATAR INTERAKTIF
-   Fungsi: Membikin avatar bergerak naik-turun halus secara otomatis
-   ========================================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&family=Rajdhani:wght@600;700&display=swap');
-
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background-color: #0d0b18;
-  color: #ffffff;
-}
-
-.font-orbitron {
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Animasi Melayang Avatar */
 .floating-avatar {
-  animation: floatAvatar 4s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
-@keyframes floatAvatar {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+/* Transisi Pintu (Gate) */
+.gate-top {
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.gate-bottom {
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Custom Scrollbar (Opsional) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0b18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff66c4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+/* Pastikan Font Loading Screen */
+#loading-content {
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
