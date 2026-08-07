@@ -75,16 +75,96 @@
   </div>
 
 
-
-
-  <!-- =========================================================================
-       MODUL 2: MAIN DASHBOARD HUB (WADAH UTAMA KONTEN SEMENTARA KOSONG)
-       Fungsi: Menampung seluruh isi halaman setelah loading screen terbuka
+   <!-- =========================================================================
+       MODUL 2: MAIN CONTENT DASHBOARD (AVATAR HERO + LIVE STREAM TIKTOK)
+       Fungsi: Menampilkan Avatar Interaktif Utama & Card Live Stream TikTok
        ========================================================================= -->
-  <main id="main-content" class="relative z-10 w-full max-w-7xl mx-auto px-4 py-8 md:py-12 space-y-8">
-    <!-- Konten Dashboard akan kita rakit secara bertahap di langkah berikutnya -->
-  </main>
+  <main id="main-content" class="relative z-10 w-full max-w-4xl mx-auto px-4 py-8 md:py-12 space-y-12 font-rajdhani">
 
+    <!-- [STRUKTUR 2.1] HERO AVATAR SECTION (Tampilan Pertama Pas Masuk) -->
+    <section class="flex flex-col items-center justify-center text-center pt-4 sm:pt-8">
+      
+      <!-- Container Avatar Interaktif (Hover Grow & Floating Animation) -->
+      <div class="relative group cursor-pointer">
+        <!-- Glow Light Effect di Belakang Avatar -->
+        <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-[#00f0ff] via-purple-600 to-[#ff66c4] blur-xl opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+        
+        <!-- Gambar Avatar Utama -->
+        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border-4 border-[#00f0ff]/50 overflow-hidden shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-transform duration-500 group-hover:scale-105 floating-avatar">
+          <img src="nainvance.png" alt="Avatar Utama" class="w-full h-full object-cover object-top">
+        </div>
+      </div>
+
+      <!-- Teks Welcome / Name Tag Interaktif -->
+      <div class="mt-6 space-y-2">
+        <span class="px-4 py-1 rounded-full bg-white/5 border border-[#00f0ff]/30 text-[#00f0ff] font-orbitron text-xs font-bold tracking-widest uppercase">
+          WELCOME TO MY PORTAL
+        </span>
+        <h1 class="font-orbitron text-4xl sm:text-5xl font-black text-white tracking-wider">
+          NAISAN <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-[#ff66c4]">STREAM</span>
+        </h1>
+      </div>
+
+      <!-- Arrow Scroll Down Indicator -->
+      <div class="mt-8 animate-bounce text-gray-400">
+        <p class="text-[10px] font-orbitron tracking-widest mb-1 text-[#00f0ff]">SCROLL DOWN FOR LIVE</p>
+        <span class="text-xl">↓</span>
+      </div>
+
+    </section>
+
+
+    <!-- [STRUKTUR 2.2] STREAMING BERLANGSUNG SECTION (Di-scroll ke Bawah) -->
+    <section class="space-y-4">
+      
+      <!-- Card Banner Live Stream Interaktif -->
+      <div class="relative w-full rounded-3xl bg-[#0d0b18]/90 border border-white/20 p-6 sm:p-8 overflow-hidden backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-[#ff66c4]/50 group">
+        
+        <!-- Light Gradient Accent Background -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-[#ff66c4]/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-[#00f0ff]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Header Card: Status Live Badge -->
+        <div class="flex items-center justify-between mb-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/20 border border-red-500/50 text-red-400 font-orbitron text-xs font-bold tracking-wider shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+            STREAMING BERLANGSUNG
+          </div>
+          <span class="font-orbitron text-xs text-gray-400">TIKTOK LIVE</span>
+        </div>
+
+        <!-- Video Player Frame / Thumbnail Live Stream -->
+        <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-black/80 border border-white/10 group-hover:border-[#00f0ff]/40 transition-all duration-300 mb-6">
+          <img src="nainvance.png" alt="Live Stream Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+          
+          <!-- Overlay Text & Play Icon -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#ff66c4] to-[#00f0ff] text-black flex items-center justify-center font-bold text-2xl shadow-[0_0_25px_rgba(0,240,255,0.6)] mb-3 group-hover:scale-110 transition-transform">
+              ▶
+            </div>
+            <h3 class="font-orbitron text-lg sm:text-2xl font-extrabold text-white">SESI STREAMING SEDANG LIVE!</h3>
+            <p class="text-xs sm:text-sm text-gray-300 mt-1 max-w-md">Yuk gabung keseruan obrolan dan gameplay interaktif langsung di TikTok sekarang!</p>
+          </div>
+        </div>
+
+        <!-- Tombol Menonton Live Langsung ke TikTok -->
+        <div class="flex justify-center">
+          <a href="https://www.tiktok.com/@USERNAME_TIKTOK_KAMU/live" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-[#ff66c4] via-purple-600 to-[#00f0ff] text-black font-orbitron font-black text-sm tracking-wider hover:opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(255,102,196,0.5)] flex items-center justify-center gap-3 group-hover:scale-105">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 2.482 6.386 6.386 0 0 0 1.08 8.163 6.335 6.335 0 0 0 8.333-.308 6.36 6.36 0 0 0 1.884-4.518V8.812a8.188 8.188 0 0 0 4.788 1.523V6.889a4.843 4.843 0 0 1-1.456-.203z"/>
+            </svg>
+            <span>MENONTON LIVE DI TIKTOK</span>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+  
+
+  
   <!-- File JS Eksternal -->
   <script src="js/main.js" defer></script>
 </body>
