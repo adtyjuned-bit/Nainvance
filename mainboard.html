@@ -1,0 +1,47 @@
+<!-- =========================================================================
+     COMPONENTS: MAINBOARD / DASHBOARD HUB
+     =========================================================================
+-->
+<main class="relative z-10 w-full max-w-7xl mx-auto px-4 py-6 md:py-10">
+
+  <!-- Background Karakter Main Dashboard -->
+  <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+    <img src="URL_GAMBAR_KARAKTER_KAMU" 
+         alt="Main Background" 
+         class="w-full h-full object-cover object-center opacity-40 blur-[3px] scale-105">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0d0b18]/80 via-[#0d0b18]/65 to-[#0d0b18]/95"></div>
+  </div>
+
+  <!-- Layout Principal: 2 Columns Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- Sidebar Profile (Kiri) -->
+    <aside class="lg:col-span-4 bg-[#0d0b18]/80 backdrop-blur-xl border border-white/15 rounded-3xl p-6 space-y-6">
+      <div class="flex flex-col items-center text-center space-y-3">
+        <div class="relative w-28 h-28">
+          <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#ff66c4] to-[#00f0ff] blur-sm opacity-80"></div>
+          <div class="relative w-full h-full rounded-2xl p-1 bg-[#0d0b18] overflow-hidden border border-white/20">
+            <img src="URL_GAMBAR_KARAKTER_KAMU" alt="Avatar" class="w-full h-full object-cover rounded-xl">
+          </div>
+        </div>
+        <h2 class="font-orbitron text-2xl font-black text-white tracking-wider">NAISAN <span class="text-[#00f0ff]">LIVE</span></h2>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/30 text-[#00f0ff] font-orbitron text-[10px] font-bold">
+          <span class="w-2 h-2 rounded-full bg-[#00f0ff] animate-ping"></span>
+          STREAM ROOM ONLINE
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Feed / Content (Kanan) -->
+    <div class="lg:col-span-8 space-y-6">
+      <div class="bg-[#0d0b18]/80 backdrop-blur-xl border border-white/15 rounded-3xl p-6 space-y-4">
+        <h3 class="font-orbitron text-sm font-bold text-white">FEATURED HIGHLIGHT</h3>
+        <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-black/80 border border-white/15">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover opacity-80">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
