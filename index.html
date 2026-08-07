@@ -115,28 +115,25 @@
     </div>
   </div>
   
-  
- 
     <!-- =========================================================================
-       3. MODUL: MAIN CONTENT WITH FULL CHARACTER BACKGROUND
+       3. MODUL: MAIN CONTENT (JAPANESE STREAMER HUB & FANZONE)
        =========================================================================
-       [PEMBATAS EDIT]: Tampilan Main Hub Jepang dengan Background Karakter Utuh
+       [PEMBATAS EDIT]: Tampilan Main Hub ala Japanese Anime Streamer Interface
   -->
   <main class="relative z-10 w-full max-w-7xl mx-auto px-4 py-8 space-y-12">
 
     <!-- =======================================================================
          BACKGROUND KARAKTER UTAMA WEB (FULLSCREEN BACKDROP)
          =======================================================================
-         [GANTI GAMBAR KARAKTER KAMU DI SINI]: Taruh URL / path file gambar kamu di 'src'
+         [EDIT DI SINI]: Ganti URL 'src' dengan file/link gambar karakter kamu
     -->
     <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
-      <!-- Gambar Background -->
-      <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80" 
+      <img src="URL_GAMBAR_KARAKTER_KAMU" 
            alt="Main Character Background" 
-           class="w-full h-full object-cover object-center opacity-30 blur-md scale-105">
+           class="w-full h-full object-cover object-center opacity-40 blur-md scale-105">
       
-      <!-- Dark Gradient Overlay agar konten tetap terbaca jelas saat di-scroll -->
-      <div class="absolute inset-0 bg-gradient-to-b from-[#0d0b18]/80 via-[#0d0b18]/60 to-[#0d0b18]/95"></div>
+      <!-- Gradient Dark Overlay agar konten utama di atasnya tetap tajam & jelas -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0d0b18]/85 via-[#0d0b18]/70 to-[#0d0b18]/95"></div>
     </div>
 
 
@@ -144,32 +141,32 @@
          SECTION 1: FEATURED STREAM SHOWCASE (HERO SECTION)
          =======================================================================
     -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#0d0b18]/70 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#0d0b18]/75 backdrop-blur-xl border border-white/15 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
       
-      <!-- Accent Glow Background -->
-      <div class="absolute -top-20 -right-20 w-80 h-80 bg-[#ff66c4]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Ambient Glow Aksen Pink/Cyan -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#ff66c4]/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- Preview Video Utama (8 Kolom) -->
       <div class="lg:col-span-8 space-y-4">
-        <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-black/80 border border-white/15 group cursor-pointer shadow-lg">
+        <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-black/80 border border-white/15 group cursor-pointer shadow-xl">
           <!-- Thumbnail Video -->
-          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-500">
           
-          <!-- Overlay Play Button Anime Style -->
+          <!-- Tombol Play Bergaya Anime UI -->
           <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all">
             <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#ff66c4] to-[#00f0ff] text-black flex items-center justify-center font-bold text-2xl shadow-[0_0_25px_rgba(255,102,196,0.6)] group-hover:scale-110 transition-transform">
               ▶
             </div>
           </div>
           
-          <!-- Top Japanese Badge -->
+          <!-- Japanese Badge Overlay -->
           <span class="absolute top-4 left-4 bg-[#ff66c4] text-white font-orbitron text-[10px] font-black px-3 py-1 rounded-full tracking-widest shadow-md">
             最新動画 • LATEST VIDEO
           </span>
         </div>
       </div>
 
-      <!-- Detail Konten & Akses Platform (4 Kolom) -->
+      <!-- Detail Konten & Tombol Sosmed (4 Kolom) -->
       <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
         <div class="space-y-3">
           <div class="flex items-center gap-2">
@@ -188,14 +185,14 @@
           </p>
         </div>
 
-        <!-- Tombol Sosial Anime Theme -->
+        <!-- Link Platform Streamer -->
         <div class="space-y-2 pt-4 border-t border-white/10">
           <p class="text-[10px] text-gray-400 font-orbitron uppercase tracking-wider">チャンネルをフォロー:</p>
           <div class="grid grid-cols-2 gap-2 font-orbitron text-xs">
-            <a href="#" class="py-2.5 bg-[#ff0055]/20 border border-[#ff0055]/40 text-red-300 font-bold rounded-xl text-center hover:bg-[#ff0055] hover:text-white transition-all">
+            <a href="#" class="py-2.5 bg-[#ff0055]/20 border border-[#ff0055]/40 text-red-300 font-bold rounded-xl text-center hover:bg-[#ff0055] hover:text-white transition-all shadow-sm">
               YOUTUBE
             </a>
-            <a href="#" class="py-2.5 bg-purple-600/20 border border-purple-500/40 text-purple-200 font-bold rounded-xl text-center hover:bg-purple-600 hover:text-white transition-all">
+            <a href="#" class="py-2.5 bg-purple-600/20 border border-purple-500/40 text-purple-200 font-bold rounded-xl text-center hover:bg-purple-600 hover:text-white transition-all shadow-sm">
               DISCORD
             </a>
           </div>
@@ -206,13 +203,13 @@
 
 
     <!-- =======================================================================
-         SECTION 2: SCHEDULE & COMMUNITY MEDIA (JAPANESE FAN HUB)
+         SECTION 2: JADWAL STREAM & FANART/MEME GALLERY
          =======================================================================
     -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
       <!-- Kiri: Jadwal Stream (5 Kolom) -->
-      <section class="lg:col-span-5 bg-[#0d0b18]/70 backdrop-blur-md border border-white/10 rounded-3xl p-6 space-y-4 shadow-xl">
+      <section class="lg:col-span-5 bg-[#0d0b18]/75 backdrop-blur-xl border border-white/15 rounded-3xl p-6 space-y-4 shadow-xl">
         <div class="flex items-center justify-between border-b border-white/10 pb-4">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-[#00f0ff]"></span>
@@ -224,8 +221,8 @@
         </div>
 
         <div class="space-y-3">
-          <!-- Item Schedule Live -->
-          <div class="p-3.5 bg-white/5 border border-[#00f0ff]/30 rounded-2xl flex justify-between items-center">
+          <!-- Live Item -->
+          <div class="p-3.5 bg-white/5 border border-[#00f0ff]/40 rounded-2xl flex justify-between items-center shadow-inner">
             <div>
               <p class="font-bold text-sm text-white">Jumat, 20:00 WIB</p>
               <p class="text-xs text-gray-400">Chill Stream & Free Talk Bareng Fans</p>
@@ -235,7 +232,7 @@
             </span>
           </div>
 
-          <!-- Item Schedule Upcoming -->
+          <!-- Upcoming Item -->
           <div class="p-3.5 bg-white/5 border border-white/10 rounded-2xl flex justify-between items-center opacity-60">
             <div>
               <p class="font-bold text-sm text-white">Minggu, 19:30 WIB</p>
@@ -249,7 +246,7 @@
       </section>
 
       <!-- Kanan: Fanart & Meme Gallery (7 Kolom) -->
-      <section class="lg:col-span-7 bg-[#0d0b18]/70 backdrop-blur-md border border-white/10 rounded-3xl p-6 space-y-4 shadow-xl">
+      <section class="lg:col-span-7 bg-[#0d0b18]/75 backdrop-blur-xl border border-white/15 rounded-3xl p-6 space-y-4 shadow-xl">
         <div class="flex items-center justify-between border-b border-white/10 pb-4">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-[#ff66c4]"></span>
@@ -276,7 +273,7 @@
 
 
     <!-- =======================================================================
-         SECTION 3: SUPPORTER ZONE & DONATION LEADERBOARD
+         SECTION 3: SUPPORTER ZONE & DONATION LEADERBOARD (BAGIAN BAWAH)
          =======================================================================
     -->
     <section class="border-t border-white/10 pt-10 space-y-6">
@@ -287,24 +284,24 @@
         <h3 class="font-orbitron text-2xl font-black text-white">
           DUKUNG CREATOR & TERLIBAT LEBIH JAUH 💖
         </h3>
-        <p class="text-gray-400 text-xs max-w-md mx-auto">
+        <p class="text-gray-300 text-xs max-w-md mx-auto">
           Suka dengan konten hiburan kami? Kamu bisa memberikan dukungan apresiasi dan namamu akan tercantum di leaderboard di bawah ini!
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         
-        <!-- Box Donasi (5 Kolom) -->
-        <div class="md:col-span-5 bg-[#0d0b18]/80 backdrop-blur-md border border-[#00f0ff]/30 rounded-3xl p-6 text-center space-y-4 shadow-xl">
+        <!-- Box Donasi Saweria (5 Kolom) -->
+        <div class="md:col-span-5 bg-[#0d0b18]/85 backdrop-blur-xl border border-[#00f0ff]/40 rounded-3xl p-6 text-center space-y-4 shadow-xl">
           <span class="font-orbitron text-xs text-[#00f0ff] tracking-widest font-bold">KIRIM SUPPORT / TTS</span>
-          <p class="text-xs text-gray-400">Pesan kamu akan muncul dan dibacakan saat streaming berlangsung!</p>
+          <p class="text-xs text-gray-300">Pesan kamu akan muncul dan dibacakan saat streaming berlangsung!</p>
           <button class="w-full py-3.5 bg-gradient-to-r from-[#00f0ff] to-[#ff66c4] text-black font-orbitron font-black text-xs rounded-xl hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.4)]">
             ⚡ DUKUNG VIA SAWERIA / SOCIABUZZ
           </button>
         </div>
 
-        <!-- Leaderboard Ringkas (7 Kolom) -->
-        <div class="md:col-span-7 bg-[#0d0b18]/80 backdrop-blur-md border border-white/10 rounded-3xl p-6 space-y-3 shadow-xl">
+        <!-- Leaderboard (7 Kolom) -->
+        <div class="md:col-span-7 bg-[#0d0b18]/85 backdrop-blur-xl border border-white/15 rounded-3xl p-6 space-y-3 shadow-xl">
           <h4 class="font-orbitron text-xs font-bold text-gray-400 tracking-wider uppercase mb-2">TOP SUPPORTERS BULAN INI</h4>
           
           <div class="grid grid-cols-3 gap-3 text-center">
@@ -331,6 +328,7 @@
 
   </main>
 
+ 
     
 
   <!-- =========================================================================
