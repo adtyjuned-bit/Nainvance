@@ -111,5 +111,19 @@
        defer = Memastikan JS berjalan setelah seluruh struktur HTML selesai dibaca.
   -->
   <script src="js/main.js" defer></script>
+        
+          <!-- WADAH MAINBOARD -->
+  <div id="mainboard"></div>
+
+  <!-- SCRIPT PEMANGGIL MAINBOARD -->
+  <script>
+    fetch('mainboard.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('mainboard').innerHTML = data;
+      })
+      .catch(err => console.error('Gagal memuat mainboard:', err));
+  </script>
+        
 </body>
 </html>
