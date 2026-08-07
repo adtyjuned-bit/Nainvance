@@ -68,29 +68,199 @@
   </div>
 
 
-  <!-- =========================================================================
+    <!-- =========================================================================
        3. MODUL: MAIN CONTENT (HALAMAN UTAMA)
        =========================================================================
-       Fungsi: Tempat semua fitur utama web berada setelah loading selesai.
+       Fungsi: Tempat semua fitur utama web berada (Story, Hero, Leaderboard, Feed).
   -->
-  <main class="relative z-0 text-center px-4 my-auto py-12">
-    
-    <!-- Title / Hero Text -->
-    <!-- [EDIT DI SINI]: Judul Selamat Datang -->
-    <h2 class="font-orbitron text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 mb-4">
-      WELCOME TO THE HUB
-    </h2>
-    
-    <!-- Subtitle / Deskripsi -->
-    <!-- [EDIT DI SINI]: Penjelasan Singkat Web Fanbase Kamu -->
-    <p class="text-gray-400 max-w-lg mx-auto text-lg mb-8">
-      Satu platform untuk Story, Activity Feed, Leaderboard Donasi, dan konten eksklusif.
-    </p>
+  <main class="relative z-0 w-full max-w-6xl mx-auto px-4 py-8 space-y-10">
 
-    <!-- Tombol Test / Demo -->
-    <button id="btn-restart" class="px-6 py-3 bg-[#00f0ff]/10 border border-[#00f0ff] text-[#00f0ff] font-orbitron font-bold rounded-lg hover:bg-[#00f0ff] hover:text-black transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)]">
-      RESTART LOADING
-    </button>
+    <!-- =======================================================================
+         SECTION 1: STORY BAR (Gaya Instagram / TikTok Stories)
+         =======================================================================
+         [EDIT DI SINI]: Kamu bisa tambah/hapus lingkaran story fans/kreator.
+    -->
+    <section class="w-full bg-[#0a0a16]/80 border border-[#00f0ff]/20 rounded-2xl p-4 backdrop-blur-md shadow-lg">
+      <div class="flex items-center space-x-4 overflow-x-auto pb-2 scrollbar-none">
+        
+        <!-- Story Kreator (Kamu) -->
+        <div class="flex flex-col items-center space-y-1 cursor-pointer min-w-[70px]">
+          <div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-purple-500 to-pink-500 hover:scale-105 transition-transform">
+            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Creator" alt="Creator" class="w-full h-full rounded-full bg-black object-cover p-1">
+          </div>
+          <span class="text-xs text-cyan-400 font-bold truncate max-w-[70px]">YOU (Update)</span>
+        </div>
+
+        <!-- Story Fans 1 -->
+        <div class="flex flex-col items-center space-y-1 cursor-pointer min-w-[70px]">
+          <div class="w-16 h-16 rounded-full p-[2px] bg-gray-700 hover:border-cyan-400 transition-colors">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Budi" alt="Fan" class="w-full h-full rounded-full bg-black object-cover">
+          </div>
+          <span class="text-xs text-gray-300 truncate max-w-[70px]">Budi_99</span>
+        </div>
+
+        <!-- Story Fans 2 -->
+        <div class="flex flex-col items-center space-y-1 cursor-pointer min-w-[70px]">
+          <div class="w-16 h-16 rounded-full p-[2px] bg-gray-700 hover:border-cyan-400 transition-colors">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Siti" alt="Fan" class="w-full h-full rounded-full bg-black object-cover">
+          </div>
+          <span class="text-xs text-gray-300 truncate max-w-[70px]">Siti_Gamer</span>
+        </div>
+
+        <!-- Tombol Submit Story untuk Fans -->
+        <div class="flex flex-col items-center space-y-1 cursor-pointer min-w-[70px]">
+          <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#00f0ff]/50 flex items-center justify-center text-[#00f0ff] hover:bg-[#00f0ff]/10 transition-all">
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <span class="text-xs text-[#00f0ff] font-semibold">Add Story</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         SECTION 2: HERO BANNER & UPCOMING EVENT / LIVE STREAM
+         =======================================================================
+         [EDIT DI SINI]: Ganti Judul, Banner Image, dan Status Live Stream kamu.
+    -->
+    <section class="relative rounded-3xl overflow-hidden border border-[#00f0ff]/30 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_30px_rgba(0,240,255,0.15)]">
+      <div class="space-y-4 text-center md:text-left max-w-xl">
+        <span class="px-3 py-1 bg-red-500/20 text-red-400 text-xs font-bold rounded-full border border-red-500/50 uppercase tracking-widest animate-pulse">
+          ● Upcoming Live Stream
+        </span>
+        <h2 class="font-orbitron text-3xl md:text-5xl font-extrabold text-white">
+          SPECIAL COMMUNITY STREAM & DONATION PARTY
+        </h2>
+        <p class="text-gray-300 text-sm md:text-base">
+          Malam minggu kita seru-seruan bareng, cek leaderboard bulanan, dan bagi-bagi reward eksklusif buat top supporter!
+        </p>
+        <div class="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
+          <button class="px-6 py-3 bg-[#00f0ff] text-black font-orbitron font-bold rounded-xl hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(0,240,255,0.5)]">
+            DUKUNG / DONASI
+          </button>
+          <button class="px-6 py-3 bg-white/10 border border-white/20 text-white font-orbitron font-semibold rounded-xl hover:bg-white/20 transition-all">
+            DISCORD COMMUNITY
+          </button>
+        </div>
+      </div>
+
+      <!-- Ilustrasi / Preview Thumbnail Stream -->
+      <div class="w-full md:w-80 h-48 bg-black/60 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer">
+        <div class="absolute inset-0 bg-cyan-500/10 group-hover:bg-cyan-500/20 transition-all"></div>
+        <span class="font-orbitron text-cyan-400 text-sm tracking-widest">[ STREAM PREVIEW ]</span>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         SECTION 3: LAYOUT 2 KOLOM (LEADERBOARD & ACTIVITY FEED)
+         =======================================================================
+    -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- ===================================================================
+           3A. KANAN / KIRI: LEADERBOARD TOP SUPPORTER (1 Kolom)
+           ===================================================================
+           [EDIT DI SINI]: Daftar Donatur Teratas & Poin Loyalty
+      -->
+      <section class="lg:col-span-1 bg-[#0a0a16]/80 border border-purple-500/30 rounded-2xl p-5 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between border-b border-purple-500/20 pb-3">
+          <h3 class="font-orbitron text-lg font-bold text-purple-400 flex items-center gap-2">
+            🏆 TOP SUPPORTERS
+          </h3>
+          <span class="text-xs text-gray-400">Bulanan</span>
+        </div>
+
+        <!-- List Supporter -->
+        <div class="space-y-3">
+          
+          <!-- Rank 1 (Whale / Gold) -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-500/20 to-transparent border border-amber-500/40">
+            <div class="flex items-center space-x-3">
+              <span class="font-orbitron text-amber-400 font-extrabold text-lg">#1</span>
+              <div>
+                <p class="font-semibold text-sm text-white">Sultan_Bekasi</p>
+                <p class="text-xs text-amber-300/80">Rp 1.500.000</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 text-[10px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/30">WHALE</span>
+          </div>
+
+          <!-- Rank 2 (Silver) -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
+            <div class="flex items-center space-x-3">
+              <span class="font-orbitron text-gray-300 font-bold text-base">#2</span>
+              <div>
+                <p class="font-semibold text-sm text-white">Rider_Night</p>
+                <p class="text-xs text-gray-400">Rp 750.000</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 text-[10px] font-bold bg-gray-500/20 text-gray-300 rounded">VIP</span>
+          </div>
+
+          <!-- Rank 3 (Bronze) -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
+            <div class="flex items-center space-x-3">
+              <span class="font-orbitron text-amber-700 font-bold text-base">#3</span>
+              <div>
+                <p class="font-semibold text-sm text-white">Asep_Gamer</p>
+                <p class="text-xs text-gray-400">Rp 300.000</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 text-[10px] font-bold bg-amber-800/20 text-amber-500 rounded">FAN</span>
+          </div>
+
+        </div>
+
+        <button class="w-full py-2 mt-2 bg-purple-600/20 border border-purple-500/40 text-purple-300 font-semibold text-xs rounded-lg hover:bg-purple-600/40 transition-all">
+          Lihat Full Leaderboard →
+        </button>
+      </section>
+
+
+      <!-- ===================================================================
+           3B. TENGAN / UTAMA: ACTIVITY FEED / FORUM COMMUNITY (2 Kolom)
+           ===================================================================
+           [EDIT DI SINI]: Tempat Fans Posting Status, Fanart, atau Chat
+      -->
+      <section class="lg:col-span-2 space-y-4">
+        
+        <!-- Box Buat Postingan Baru -->
+        <div class="bg-[#0a0a16]/80 border border-[#00f0ff]/20 rounded-2xl p-4 space-y-3">
+          <textarea placeholder="Tulis sesuatu untuk komunitas..." class="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-[#00f0ff] resize-none h-20"></textarea>
+          <div class="flex justify-between items-center">
+            <button class="text-xs text-gray-400 hover:text-cyan-400">📷 Upload Gambar/Fanart</button>
+            <button class="px-4 py-2 bg-[#00f0ff] text-black font-orbitron font-bold text-xs rounded-lg hover:bg-cyan-300 transition-all">
+              POSTING
+            </button>
+          </div>
+        </div>
+
+        <!-- Post Feed 1 -->
+        <article class="bg-[#0a0a16]/80 border border-white/10 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Budi" class="w-10 h-10 rounded-full bg-gray-800">
+              <div>
+                <h4 class="font-bold text-sm text-white">Budi_99 <span class="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30">PRO</span></h4>
+                <span class="text-xs text-gray-500">2 jam yang lalu</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300">
+            Fanart sederhana buat live stream nanti malam! Semoga ke-notice pas stream 🔥
+          </p>
+          <div class="flex items-center space-x-6 text-xs text-gray-400 pt-2 border-t border-white/5">
+            <button class="hover:text-cyan-400">❤️ 24 Suka</button>
+            <button class="hover:text-cyan-400">💬 5 Komentar</button>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+
   </main>
 
 
