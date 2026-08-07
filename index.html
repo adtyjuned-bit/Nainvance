@@ -152,108 +152,223 @@
       </div>
     </section>
 
+      <!-- =========================================================================
+       3. MODUL: MAIN CONTENT (HUB UTAMA UI REVISED)
+       =========================================================================
+       [PEMBATAS EDIT]: Menu Utama dengan Layout Futuristic Grid Dashboard
+  -->
+  <main class="relative z-0 w-full max-w-7xl mx-auto px-4 py-6 space-y-8">
 
     <!-- =======================================================================
-         SECTION 3: LAYOUT 2 KOLOM (LEADERBOARD & ACTIVITY FEED)
+         1. HERO DASHBOARD BANNER (Cinematic Top Feature)
+         =======================================================================
+         [EDIT DI SINI]: Judul Banner Utama, Tagline, dan Button
+    -->
+    <section class="relative w-full rounded-3xl overflow-hidden border border-[#00f0ff]/30 bg-[#0a0a16] p-8 md:p-12 shadow-[0_0_40px_rgba(0,240,255,0.15)]">
+      <!-- Background Glow Effect -->
+      <div class="absolute -right-10 -top-10 w-96 h-96 bg-[#00f0ff]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-10 -bottom-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-4 max-w-2xl text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/40 text-red-400 text-xs font-bold font-orbitron tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> LIVE HUB SYSTEM
+          </div>
+          <h2 class="font-orbitron text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
+            JOIN THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-purple-500">ULTIMATE HYPE</span> ZONE
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+            Dukung creator favoritmu, pimpin posisi puncak leaderboard, dan dapatkan akses langsung ke Story eksklusif & komunitas VIP.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
+            <button class="px-8 py-3.5 bg-[#00f0ff] text-black font-orbitron font-extrabold text-sm rounded-xl hover:bg-cyan-300 transition-all shadow-[0_0_25px_rgba(0,240,255,0.4)] tracking-wider">
+              ⚡ DUKUNG / DONASI
+            </button>
+            <button class="px-6 py-3.5 bg-white/5 border border-white/10 text-white font-orbitron font-bold text-sm rounded-xl hover:bg-white/10 transition-all tracking-wider">
+              COMMUNITY DISCORD
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Preview / Avatar Showcase Widget -->
+        <div class="w-full md:w-80 h-52 rounded-2xl bg-gradient-to-b from-black/80 to-[#0a0a16] border border-[#00f0ff]/30 p-4 flex flex-col justify-between relative overflow-hidden group">
+          <div class="flex justify-between items-center z-10">
+            <span class="text-[10px] font-orbitron text-[#00f0ff] tracking-widest border border-[#00f0ff]/40 px-2 py-0.5 rounded bg-black/50">LIVE STATUS</span>
+            <span class="text-xs text-red-400 font-bold flex items-center gap-1">● ONLINE</span>
+          </div>
+          <div class="text-center my-auto z-10">
+            <p class="font-orbitron text-lg font-bold text-white">STREAM PARTY #24</p>
+            <p class="text-xs text-gray-400">Playing: Cyberpunk 2077</p>
+          </div>
+          <div class="w-full bg-[#00f0ff]/10 text-center py-2 rounded-lg border border-[#00f0ff]/20 text-xs font-orbitron text-[#00f0ff] font-bold z-10">
+            WATCH STREAM →
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         2. STORY HUB (Horizontal Sleek Bar)
+         =======================================================================
+         [EDIT DI SINI]: Update daftar lingkaran Story Fans & Creator
+    -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <h3 class="font-orbitron text-xs font-bold text-gray-400 tracking-widest uppercase">RECENT STORIES</h3>
+        <span class="text-xs text-[#00f0ff] cursor-pointer hover:underline">View All →</span>
+      </div>
+
+      <div class="flex items-center space-x-5 overflow-x-auto pb-3 pt-1 scrollbar-none">
+        <!-- Add Story Button -->
+        <div class="flex flex-col items-center space-y-1.5 cursor-pointer shrink-0">
+          <div class="w-16 h-16 rounded-2xl border-2 border-dashed border-[#00f0ff]/50 bg-[#00f0ff]/5 flex items-center justify-center text-[#00f0ff] hover:bg-[#00f0ff]/20 transition-all">
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <span class="text-[11px] text-[#00f0ff] font-semibold">Post Story</span>
+        </div>
+
+        <!-- Story Creator -->
+        <div class="flex flex-col items-center space-y-1.5 cursor-pointer shrink-0">
+          <div class="w-16 h-16 rounded-2xl p-[2px] bg-gradient-to-tr from-[#00f0ff] via-purple-500 to-pink-500 hover:scale-105 transition-transform shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Creator" class="w-full h-full rounded-[14px] bg-black object-cover">
+          </div>
+          <span class="text-[11px] text-[#00f0ff] font-bold">CREATOR</span>
+        </div>
+
+        <!-- Fan Story 1 -->
+        <div class="flex flex-col items-center space-y-1.5 cursor-pointer shrink-0">
+          <div class="w-16 h-16 rounded-2xl p-[2px] bg-gradient-to-tr from-purple-500 to-cyan-500 hover:scale-105 transition-transform">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Budi" class="w-full h-full rounded-[14px] bg-black object-cover">
+          </div>
+          <span class="text-[11px] text-gray-300">Budi_99</span>
+        </div>
+
+        <!-- Fan Story 2 -->
+        <div class="flex flex-col items-center space-y-1.5 cursor-pointer shrink-0">
+          <div class="w-16 h-16 rounded-2xl p-[2px] bg-gray-800 hover:border-[#00f0ff] border border-transparent transition-colors">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Siti" class="w-full h-full rounded-[14px] bg-black object-cover">
+          </div>
+          <span class="text-[11px] text-gray-400">Siti_Gamer</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         3. DASHBOARD MAIN GRID (2 Kolom: Leaderboard + Community Feed)
          =======================================================================
     -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-2">
 
       <!-- ===================================================================
-           3A. KANAN / KIRI: LEADERBOARD TOP SUPPORTER (1 Kolom)
+           KOLOM KIRI (4 Columns): LEADERBOARD TOP SUPPORTERS
            ===================================================================
-           [EDIT DI SINI]: Daftar Donatur Teratas & Poin Loyalty
+           [EDIT DI SINI]: Peringkat Donatur Teratas
       -->
-      <section class="lg:col-span-1 bg-[#0a0a16]/80 border border-purple-500/30 rounded-2xl p-5 space-y-4 shadow-lg">
-        <div class="flex items-center justify-between border-b border-purple-500/20 pb-3">
-          <h3 class="font-orbitron text-lg font-bold text-purple-400 flex items-center gap-2">
-            🏆 TOP SUPPORTERS
-          </h3>
-          <span class="text-xs text-gray-400">Bulanan</span>
+      <section class="lg:col-span-4 bg-[#0a0a16] border border-white/10 rounded-3xl p-6 space-y-5 h-fit shadow-xl">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <div>
+            <h3 class="font-orbitron text-base font-extrabold text-white tracking-wide">LEADERBOARD</h3>
+            <p class="text-[11px] text-gray-400">Top Donator Bulan Ini</p>
+          </div>
+          <span class="px-2.5 py-1 bg-purple-500/20 text-purple-300 text-[10px] font-orbitron font-bold rounded-md border border-purple-500/30">MONTHLY</span>
         </div>
 
-        <!-- List Supporter -->
         <div class="space-y-3">
-          
-          <!-- Rank 1 (Whale / Gold) -->
-          <div class="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-500/20 to-transparent border border-amber-500/40">
+          <!-- Rank 1 Card -->
+          <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-500/20 via-amber-500/5 to-transparent border border-amber-500/40 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-              <span class="font-orbitron text-amber-400 font-extrabold text-lg">#1</span>
+              <div class="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/50 flex items-center justify-center font-orbitron font-extrabold text-amber-400 text-sm">
+                1
+              </div>
               <div>
-                <p class="font-semibold text-sm text-white">Sultan_Bekasi</p>
-                <p class="text-xs text-amber-300/80">Rp 1.500.000</p>
+                <p class="font-bold text-sm text-white">Sultan_Muda</p>
+                <p class="text-xs text-amber-400 font-semibold">Rp 2.500.000</p>
               </div>
             </div>
-            <span class="px-2 py-1 text-[10px] font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/30">WHALE</span>
+            <span class="text-lg">👑</span>
           </div>
 
-          <!-- Rank 2 (Silver) -->
-          <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
+          <!-- Rank 2 Card -->
+          <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-              <span class="font-orbitron text-gray-300 font-bold text-base">#2</span>
+              <div class="w-8 h-8 rounded-xl bg-gray-500/20 border border-gray-500/30 flex items-center justify-center font-orbitron font-bold text-gray-300 text-sm">
+                2
+              </div>
               <div>
-                <p class="font-semibold text-sm text-white">Rider_Night</p>
-                <p class="text-xs text-gray-400">Rp 750.000</p>
+                <p class="font-bold text-sm text-white">Rider_Night</p>
+                <p class="text-xs text-gray-400">Rp 1.200.000</p>
               </div>
             </div>
-            <span class="px-2 py-1 text-[10px] font-bold bg-gray-500/20 text-gray-300 rounded">VIP</span>
+            <span class="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">VIP</span>
           </div>
 
-          <!-- Rank 3 (Bronze) -->
-          <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
+          <!-- Rank 3 Card -->
+          <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-              <span class="font-orbitron text-amber-700 font-bold text-base">#3</span>
+              <div class="w-8 h-8 rounded-xl bg-amber-800/20 border border-amber-800/30 flex items-center justify-center font-orbitron font-bold text-amber-600 text-sm">
+                3
+              </div>
               <div>
-                <p class="font-semibold text-sm text-white">Asep_Gamer</p>
-                <p class="text-xs text-gray-400">Rp 300.000</p>
+                <p class="font-bold text-sm text-white">Asep_Gamer</p>
+                <p class="text-xs text-gray-400">Rp 500.000</p>
               </div>
             </div>
-            <span class="px-2 py-1 text-[10px] font-bold bg-amber-800/20 text-amber-500 rounded">FAN</span>
           </div>
-
         </div>
 
-        <button class="w-full py-2 mt-2 bg-purple-600/20 border border-purple-500/40 text-purple-300 font-semibold text-xs rounded-lg hover:bg-purple-600/40 transition-all">
-          Lihat Full Leaderboard →
+        <button class="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-orbitron text-xs font-bold rounded-xl transition-all">
+          VIEW FULL RANKING →
         </button>
       </section>
 
 
       <!-- ===================================================================
-           3B. TENGAN / UTAMA: ACTIVITY FEED / FORUM COMMUNITY (2 Kolom)
+           KOLOM KANAN (8 Columns): COMMUNITY FEED / WALL OF FAME
            ===================================================================
-           [EDIT DI SINI]: Tempat Fans Posting Status, Fanart, atau Chat
+           [EDIT DI SINI]: Form Input Posting & Timeline Feed Fans
       -->
-      <section class="lg:col-span-2 space-y-4">
+      <section class="lg:col-span-8 space-y-6">
         
-        <!-- Box Buat Postingan Baru -->
-        <div class="bg-[#0a0a16]/80 border border-[#00f0ff]/20 rounded-2xl p-4 space-y-3">
-          <textarea placeholder="Tulis sesuatu untuk komunitas..." class="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-[#00f0ff] resize-none h-20"></textarea>
-          <div class="flex justify-between items-center">
-            <button class="text-xs text-gray-400 hover:text-cyan-400">📷 Upload Gambar/Fanart</button>
-            <button class="px-4 py-2 bg-[#00f0ff] text-black font-orbitron font-bold text-xs rounded-lg hover:bg-cyan-300 transition-all">
-              POSTING
+        <!-- Input Post Widget -->
+        <div class="bg-[#0a0a16] border border-white/10 rounded-3xl p-5 space-y-4 shadow-xl">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-[#00f0ff]/10 border border-[#00f0ff]/30 flex items-center justify-center text-[#00f0ff] font-bold">
+              YOU
+            </div>
+            <input type="text" placeholder="Bagikan pemikiran, fanart, atau pesan kamu..." class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00f0ff] transition-all">
+          </div>
+          <div class="flex justify-between items-center pt-1">
+            <div class="flex space-x-4 text-xs text-gray-400">
+              <button class="hover:text-[#00f0ff] flex items-center gap-1">📷 Image</button>
+              <button class="hover:text-[#00f0ff] flex items-center gap-1">🎥 Video</button>
+            </div>
+            <button class="px-5 py-2 bg-[#00f0ff] text-black font-orbitron font-bold text-xs rounded-lg hover:bg-cyan-300 transition-all">
+              PUBLISH
             </button>
           </div>
         </div>
 
-        <!-- Post Feed 1 -->
-        <article class="bg-[#0a0a16]/80 border border-white/10 rounded-2xl p-5 space-y-3">
+        <!-- Feed List Card 1 -->
+        <article class="bg-[#0a0a16] border border-white/10 rounded-3xl p-6 space-y-4 shadow-xl">
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Budi" class="w-10 h-10 rounded-full bg-gray-800">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Budi" class="w-11 h-11 rounded-2xl bg-gray-800 border border-white/10">
               <div>
-                <h4 class="font-bold text-sm text-white">Budi_99 <span class="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30">PRO</span></h4>
-                <span class="text-xs text-gray-500">2 jam yang lalu</span>
+                <h4 class="font-bold text-sm text-white flex items-center gap-2">
+                  Budi_99 <span class="text-[9px] font-orbitron bg-[#00f0ff]/10 text-[#00f0ff] border border-[#00f0ff]/30 px-2 py-0.5 rounded">PRO MEMBER</span>
+                </h4>
+                <span class="text-[11px] text-gray-500">10 Menit yang lalu</span>
               </div>
             </div>
           </div>
-          <p class="text-sm text-gray-300">
-            Fanart sederhana buat live stream nanti malam! Semoga ke-notice pas stream 🔥
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Nggak sabar nunggu live stream nanti malam! Moga-moga permintaan lagu gua diputar 🚀🔥
           </p>
-          <div class="flex items-center space-x-6 text-xs text-gray-400 pt-2 border-t border-white/5">
-            <button class="hover:text-cyan-400">❤️ 24 Suka</button>
-            <button class="hover:text-cyan-400">💬 5 Komentar</button>
+          <div class="flex items-center space-x-6 text-xs text-gray-400 pt-3 border-t border-white/5">
+            <button class="hover:text-[#00f0ff] font-medium flex items-center gap-1.5">❤️ 32 Likes</button>
+            <button class="hover:text-[#00f0ff] font-medium flex items-center gap-1.5">💬 8 Comments</button>
           </div>
         </article>
 
@@ -261,8 +376,8 @@
 
     </div>
 
-  </main>
-
+              </main>
+    
 
   <!-- =========================================================================
        4. EXTERNAL JAVASCRIPT
