@@ -35,13 +35,15 @@
          =======================================================================
          [GANTI GAMBAR KARAKTER KAMU DI SINI]: Taruh URL / path file gambar karakter di 'src'
     -->
-    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-      <img src="nainvance.png" 
-           alt="Character Background" 
-           class="w-full h-full object-cover object-center opacity-20 blur-md scale-110">
-      <!-- Dark Overlay agar teks di atasnya tetap terbaca jelas -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0d0b18] via-[#0d0b18]/70 to-[#0d0b18]"></div>
-    </div>
+    <!-- 1. BACKGROUND KARAKTER (Sudah diubah z-[1] dan opacity-40) -->
+<div class="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+  <img src="nainvance.png" 
+       alt="Character Background" 
+       class="w-full h-full object-cover object-center opacity-40 blur-sm scale-105">
+  
+  <div class="absolute inset-0 bg-gradient-to-t from-[#0d0b18] via-[#0d0b18]/40 to-[#0d0b18]/80"></div>
+</div>
+
 
     <!-- Pattern Dots Overlay -->
     <div class="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
