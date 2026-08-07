@@ -56,7 +56,7 @@ function startLoading() {
     else if (progress < 95) statusText.innerText = statusMessages[4];
     else statusText.innerText = statusMessages[6];
 
-  }, 80); // Kecepatan tick interval (ms)
+  }, 150); // Kecepatan tick interval (ms)
 }
 
 // =========================================================================
