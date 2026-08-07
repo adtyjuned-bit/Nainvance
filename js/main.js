@@ -1,14 +1,18 @@
+/* =========================================================================
+   NOTE JS: LOGIKA LOADING SCREEN, TRANSISI PINTU & REFRESH AOS
+   ========================================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Jalankan Inisialisasi AOS saat awal muat
+  // 1. Inisialisasi AOS saat pertama kali dibuka
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      duration: 800, // Durasi animasi meluncur (ms)
-      once: false,   // Bikin animasi bisa terulang saat scroll naik/turun
+      duration: 800, // Durasi animasi slide up (ms)
+      once: false,   // Animasi terulang tiap kali di-scroll
       offset: 50     // Jarak pemicu animasi
     });
   }
 
-  // 2. Logika Loading Screen & Progress Bar
+  // 2. Variable & Elemen Loading Screen
   let progress = 0;
   const progressBar = document.getElementById('progress-bar');
   const percentageText = document.getElementById('percentage-text');
@@ -17,15 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const gateTop = document.querySelector('.gate-top');
   const gateBottom = document.querySelector('.gate-bottom');
 
+  // 3. Timer Progress Loading (0% ke 100%)
   const interval = setInterval(() => {
     progress += 2;
+
     if (progressBar) progressBar.style.width = `${progress}%`;
     if (percentageText) percentageText.innerText = `${progress}%`;
 
     if (progress >= 100) {
       clearInterval(interval);
 
-      // Transisi Pembukaan Pintu Loading Screen
+      // Transisi Pembukaan Pintu & Fadeout Loading
       setTimeout(() => {
         if (loadingContent) loadingContent.classList.add('opacity-0', 'scale-95');
         if (gateTop) gateTop.classList.add('-translate-y-full');
@@ -37,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
             if (loadingScreen) loadingScreen.style.display = 'none';
 
-            // PENTING: Refresh & hitung ulang AOS tepat saat pintu loading benar-benar hilang
+            // Refresh AOS setelah pintu terbuka agar elemen slide-up aktif
             if (typeof AOS !== 'undefined') {
               AOS.refresh();
             }
