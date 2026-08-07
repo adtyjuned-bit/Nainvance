@@ -1,15 +1,4 @@
-/* Custom Animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.floating-avatar {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Transisi Pintu (Gate) */
+/* Styling Transisi Pintu Loading Screen */
 .gate-top {
   transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -18,25 +7,28 @@
   transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* Custom Scrollbar (Opsional) */
+/* Animasi Slide-Up Manual Tanpa AOS */
+.fade-up-element {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Class saat elemen muncul di layar */
+.fade-up-element.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: #0d0b18;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #ff66c4;
   border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #00f0ff;
-}
-
-/* Pastikan Font Loading Screen */
-#loading-content {
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
