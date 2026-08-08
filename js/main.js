@@ -176,3 +176,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+const openOrderGuide = document.getElementById("openOrderGuide");
+const orderGuideModal = document.getElementById("orderGuideModal");
+const orderGuideClose = document.getElementById("orderGuideClose");
+
+if (openOrderGuide && orderGuideModal) {
+    openOrderGuide.addEventListener("click", () => {
+        orderGuideModal.classList.add("active");
+    });
+}
+
+if (orderGuideClose && orderGuideModal) {
+    orderGuideClose.addEventListener("click", () => {
+        orderGuideModal.classList.remove("active");
+    });
+}
