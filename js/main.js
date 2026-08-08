@@ -53,3 +53,126 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach(el => observer.observe(el));
   }
 });
+
+/* =====================================
+   ACCOUNT SERVICE PROMO
+===================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const promoCard = document.querySelector(".service-promo-card");
+
+    const orderButton = document.getElementById("serviceOrderBtn");
+
+    const modal = document.getElementById("serviceModal");
+
+    const closeButton = document.getElementById("serviceModalClose");
+
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================= */
+
+    if (promoCard) {
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        promoCard.classList.add("show");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+        observer.observe(promoCard);
+    }
+
+
+    /* =========================
+       OPEN MODAL
+    ========================= */
+
+    if (orderButton && modal) {
+
+        orderButton.addEventListener("click", () => {
+
+            modal.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    }
+
+
+    /* =========================
+       CLOSE MODAL
+    ========================= */
+
+    function closeServiceModal() {
+
+        if (!modal) return;
+
+        modal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            closeServiceModal
+        );
+
+    }
+
+
+    /* =========================
+       CLICK OUTSIDE MODAL
+    ========================= */
+
+    if (modal) {
+
+        modal.addEventListener("click", (event) => {
+
+            if (event.target === modal) {
+
+                closeServiceModal();
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       ESC KEY
+    ========================= */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            closeServiceModal();
+
+        }
+
+    });
+
+});
