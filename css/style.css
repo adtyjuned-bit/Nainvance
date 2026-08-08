@@ -727,133 +727,166 @@
 /* ==========================================
    MOBILE
 ========================================== */
-
 @media (max-width: 600px) {
 
     .service-promo {
-        padding: 30px 0;
+        padding: 25px 0;
     }
-
 
     .service-promo-card {
-
         width: calc(100% - 70px);
 
-        min-height: 620px;
+        /* JANGAN dipaksa 620px */
+        min-height: 0;
+        height: auto;
 
-        padding: 25px 22px;
+        padding: 23px 20px;
 
-        border-radius: 28px;
+        border-radius: 25px;
     }
 
-
+    /* TOP */
     .service-top {
-        align-items: flex-start;
+        align-items: center;
     }
-
 
     .service-badge {
-
-        padding: 9px 12px;
-
-        font-size: 9px;
-
-        letter-spacing: 1.5px;
+        padding: 8px 11px;
+        font-size: 8px;
+        letter-spacing: 1.3px;
     }
-
 
     .slot-counter {
-        font-size: 8px;
+        font-size: 7px;
+        letter-spacing: 1px;
     }
 
 
+    /* MAIN */
     .service-main {
-
-        margin-top: 70px;
+        margin-top: 42px;
     }
 
+    .service-mini-title {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+        margin-bottom: 9px;
+    }
 
     .service-main h2 {
-
-        font-size: 47px;
-
-        letter-spacing: -3px;
+        font-size: 42px;
+        line-height: .86;
+        letter-spacing: -2.5px;
     }
-
 
     .service-main h2 span {
-        margin-left: 12px;
+        margin-left: 8px;
     }
 
 
+    /* SLOGAN */
     .service-slogan {
-
-        font-size: 17px;
-
-        margin-top: 25px;
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 1.2;
     }
-
 
     .service-main p {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.55;
 
-        font-size: 13px;
-
-        max-width: 310px;
+        max-width: 290px;
     }
 
 
+    /* CONTROLLER */
     .floating-controller {
+        right: 16px;
+        top: 105px;
 
-        right: 20px;
-        top: 130px;
+        width: 55px;
+        height: 55px;
 
-        width: 65px;
-        height: 65px;
+        font-size: 25px;
 
-        font-size: 29px;
-
-        border-radius: 20px;
+        border-radius: 17px;
     }
 
 
+    /* TAGS */
     .service-tags {
+        margin-top: 22px;
+        gap: 7px;
+    }
 
-        margin-top: 30px;
+    .service-tags span {
+        padding: 7px 9px;
+        font-size: 8px;
+        border-radius: 8px;
     }
 
 
+    /* BOTTOM */
     .service-bottom {
-
         display: block;
 
-        margin-top: 35px;
+        margin-top: 25px;
+        padding-top: 18px;
     }
-
 
     .service-price {
-
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
+    .service-price small {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
 
     .service-price strong {
-        font-size: 26px;
+        font-size: 23px;
     }
 
 
+    /* BUTTON */
     .service-order-btn {
-
         width: 100%;
 
         justify-content: center;
 
-        padding: 17px;
+        padding: 14px;
+
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .service-order-btn b {
+        font-size: 16px;
     }
 
 
+    /* BACKGROUND TEXT */
     .service-bg-text {
-        font-size: 100px;
+        font-size: 85px;
+        letter-spacing: -5px;
+    }
+
+    .text-play {
+        right: -50px;
+        top: 120px;
+    }
+
+    .text-grind {
+        left: -60px;
+        bottom: 70px;
+    }
+
+
+    /* CORNERS */
+    .corner {
+        width: 25px;
+        height: 25px;
     }
 
 }
-
