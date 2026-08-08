@@ -228,6 +228,15 @@
     <a href="https://wa.me/628xxxxxxx" style="background:red; padding:10px 20px; color:white; text-decoration:none; border-radius:5px;">Chat Admin</a>
   </div>
       </div>
+
+      <script>
+function bukaPromo() { document.getElementById("promoModal").style.display = "block"; }
+function tutupPromo() { document.getElementById("promoModal").style.display = "none"; }
+// Tutup jika klik di luar box
+window.onclick = function(event) {
+  if (event.target == document.getElementById("promoModal")) { tutupPromo(); }
+}
+      </script>
       
       
     </section>
