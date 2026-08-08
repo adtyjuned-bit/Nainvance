@@ -33,3 +33,650 @@
   border-radius: 10px;
 }
 
+/* =====================================
+   ACCOUNT PLAYING SERVICE
+===================================== */
+
+.service-promo {
+    width: 100%;
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.service-promo-card {
+    width: calc(100% - 70px);
+    max-width: 620px;
+    min-height: 430px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(255, 0, 200, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(0, 220, 255, 0.15),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #101020,
+            #090912 70%
+        );
+
+    border: 1px solid rgba(0, 220, 255, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(0, 200, 255, 0.08),
+        inset 0 0 40px rgba(130, 0, 255, 0.04);
+
+    padding: 35px;
+    
+    transform: translateY(30px);
+    opacity: 0;
+
+    transition:
+        transform 0.7s ease,
+        opacity 0.7s ease,
+        box-shadow 0.4s ease;
+}
+
+.service-promo-card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.service-promo-card:hover {
+    box-shadow:
+        0 0 35px rgba(0, 220, 255, 0.15),
+        0 0 70px rgba(190, 0, 255, 0.08),
+        inset 0 0 50px rgba(130, 0, 255, 0.06);
+}
+
+
+/* =====================================
+   BACKGROUND GLOW
+===================================== */
+
+.service-glow {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #00eaff,
+        #b900ff,
+        #ff4fcf
+    );
+
+    filter: blur(80px);
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   BADGE
+===================================== */
+
+.service-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    color: #fff;
+
+    background: rgba(255, 50, 120, 0.08);
+
+    border: 1px solid rgba(255, 70, 150, 0.45);
+
+    box-shadow:
+        0 0 15px rgba(255, 50, 150, 0.12);
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================
+   ICON
+===================================== */
+
+.service-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    font-size: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 220, 255, 0.18),
+            rgba(220, 0, 255, 0.18)
+        );
+
+    border: 1px solid rgba(0, 230, 255, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(0, 220, 255, 0.12);
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.service-content {
+    position: relative;
+    z-index: 2;
+}
+
+.service-mini-title {
+    display: block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #00eaff;
+
+    margin-bottom: 6px;
+}
+
+.service-content h2 {
+    margin: 0;
+
+    font-size: clamp(32px, 7vw, 48px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    color: #fff;
+}
+
+.service-content h2 span {
+    background: linear-gradient(
+        90deg,
+        #00eaff,
+        #b94cff,
+        #ff5bc8
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.service-content p {
+    max-width: 480px;
+
+    margin: 18px 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.62);
+}
+
+
+/* =====================================
+   TAGS
+===================================== */
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 18px 0;
+}
+
+.service-tags span {
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    color: rgba(255,255,255,0.8);
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =====================================
+   PRICE
+===================================== */
+
+.service-price {
+    margin-top: 22px;
+    margin-bottom: 18px;
+}
+
+.service-price small {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,0.4);
+}
+
+.service-price strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 20px rgba(0, 220, 255, 0.3);
+}
+
+
+/* =====================================
+   ORDER BUTTON
+===================================== */
+
+.service-order-btn {
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: none;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #090912;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #b84cff,
+            #ff5ccf
+        );
+
+    box-shadow:
+        0 8px 30px rgba(0, 220, 255, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.service-order-btn span {
+    float: right;
+
+    font-size: 20px;
+
+    line-height: 12px;
+}
+
+.service-order-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 40px rgba(0, 220, 255, 0.25);
+}
+
+.service-order-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =====================================
+   DECORATIVE LINES
+===================================== */
+
+.service-line {
+    position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 220, 255, 0.5),
+        transparent
+    );
+
+    opacity: 0.35;
+
+    transform: rotate(-35deg);
+}
+
+.line-1 {
+    width: 280px;
+
+    right: -80px;
+    bottom: 100px;
+}
+
+.line-2 {
+    width: 200px;
+
+    right: -50px;
+    bottom: 65px;
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.service-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(3, 3, 10, 0.78);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.service-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-modal-box {
+    width: 100%;
+    max-width: 400px;
+
+    position: relative;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(190, 0, 255, 0.15),
+            transparent 45%
+        ),
+        #10101d;
+
+    border: 1px solid rgba(0, 220, 255, 0.3);
+
+    box-shadow:
+        0 0 60px rgba(0, 220, 255, 0.12),
+        0 0 100px rgba(190, 0, 255, 0.08);
+
+    transform: scale(0.9);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.service-modal.active .service-modal-box {
+    transform: scale(1);
+}
+
+.service-modal-close {
+    position: absolute;
+
+    right: 16px;
+    top: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    color: rgba(255,255,255,0.7);
+
+    background: rgba(255,255,255,0.06);
+}
+
+.modal-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    font-size: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,220,255,0.15),
+            rgba(220,0,255,0.15)
+        );
+
+    border: 1px solid rgba(0,220,255,0.3);
+}
+
+.service-modal-box > span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #00eaff;
+}
+
+.service-modal-box h3 {
+    margin: 12px 0;
+
+    font-size: 30px;
+    line-height: 1;
+
+    color: #fff;
+}
+
+.service-modal-box h3 b {
+    background: linear-gradient(
+        90deg,
+        #00eaff,
+        #ff5bcf
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.service-modal-box p {
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.58);
+
+    margin: 15px 0 20px;
+}
+
+.modal-price small {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,0.4);
+}
+
+.modal-price strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 25px;
+
+    color: #fff;
+}
+
+.modal-order-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    color: #090912;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #b84cff,
+            #ff5ccf
+        );
+
+    transition: 0.25s ease;
+}
+
+.modal-order-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .service-promo {
+        padding: 25px 0;
+    }
+
+    .service-promo-card {
+        width: calc(100% - 70px);
+        padding: 27px 22px;
+
+        min-height: 410px;
+
+        border-radius: 25px;
+    }
+
+    .service-badge {
+        font-size: 9px;
+
+        padding: 7px 12px;
+    }
+
+    .service-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 24px;
+
+        border-radius: 17px;
+    }
+
+    .service-content h2 {
+        font-size: 34px;
+    }
+
+    .service-content p {
+        font-size: 13px;
+    }
+
+    .service-tags span {
+        font-size: 9px;
+    }
+
+    .service-price strong {
+        font-size: 22px;
+    }
+
+  }
+
